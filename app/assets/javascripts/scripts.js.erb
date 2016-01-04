@@ -1,0 +1,115 @@
+$(document).ready(function(){
+    function fadeInContent(){
+        $('.fadein1').fadeIn(600, function(){
+            $('.fadein2').fadeIn(800);
+            $('.modal-trigger').leanModal();
+            $('select').material_select();
+            $('.slider').slider({full_width: true});
+        });
+    }
+    if(sessionStorage.visited){
+        $('#magic1').html('kelly brooke howard');
+        $('#magic2').html('web developer');
+        $('#magic3').html('designer');
+        fadeInContent();
+    }
+    else{
+        var name = "kelly\u00A0brooke\u00A0howard",
+        title1 = "web\u00A0developer",
+        title2 = "designer",
+        p1 = document.getElementById('magic1'),
+        p2 = document.getElementById('magic2'),
+        p3 = document.getElementById('magic3'),
+        settingFirst = true,
+        settingSecond = false,
+        settingThird = false,
+        i = 0;
+        function updateText(){
+            if(settingFirst){
+                if(i == name.length){
+                    settingFirst = false;
+                    settingSecond = true;
+                    i = 0;
+                } else{
+                    p1.innerHTML = p1.innerHTML+name[i++];
+                }
+            }else if(settingSecond){
+                if(i == title1.length){
+                    settingSecond = false;
+                    settingThird = true;
+                    i = 0;
+                } else{
+                    p2.innerHTML = p2.innerHTML+title1[i++];
+                }
+            }else if(settingThird){
+                if(i == title2.length){
+                    settingThird = false;
+                    i = 0;
+                } else{
+                    p3.innerHTML = p3.innerHTML+title2[i++];
+                }
+            } else{
+                sessionStorage.visited = true;
+                // $('#splash').fadeOut(1000);
+                // $('.container').show();
+                clearInterval(addText);
+                fadeInContent();
+            }
+        }
+        var addText = setInterval(updateText,60);
+    }
+    // social media links
+    $("#li").hover(function(){
+        $(this).attr('src', "<%= image_path 'linkedindark.gif', id: 'li', class: 'social-media' %>");
+    }, function(){
+        $(this).attr('src', "<%= image_path 'linkedin.gif', id: 'li', class: 'social-media' %>");
+    });
+    $("#git").hover(function(){
+        $(this).attr('src', "<%= image_path 'gitdark.gif', id: 'li', class: 'social-media' %>");
+    }, function(){
+        $(this).attr('src', "<%= image_path 'git.gif', id: 'li', class: 'social-media' %>");
+    });
+    $("#twitter").hover(function(){
+        $(this).attr('src', "<%= image_path 'twitterdark.gif', id: 'li', class: 'social-media' %>");
+    }, function(){
+        $(this).attr('src', "<%= image_path 'twitter.gif', id: 'li', class: 'social-media' %>");
+    });
+    //nav links
+    $("#portfolio-link").click(function(){
+        $("#experience").hide();
+        $("#portfolio").fadeIn();
+        return false;
+    });
+    $("#experience-link").click(function(){
+        $("#portfolio").hide();
+        $("#experience").fadeIn();
+        return false;
+    });
+    $("#contact").click(function(){
+        $("#portfolio").hide();
+        $("#experience").hide();
+        return false;
+    });
+    //contact form submission
+    $("form").submit(function(){
+        $.post($(this).attr('action'), $(this).serialize(), function(res){
+
+        },"json");
+        return false;
+    });
+    $("#contactForm").click(function(){
+        $('#success').html("Thank you for contacting me!").show().delay(800).fadeOut(400);
+    });
+    //scroll to top functions
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 1) {
+            $('#toTop:hidden').stop(true, true).fadeIn();
+        } else {
+            $('#toTop').stop(true, true).fadeOut();
+        }
+    });
+    $('a[href="#top"]').click(function() {
+        $('html,body').animate({ scrollTop: 0 }, 'slow');
+        return false;
+    });
+});

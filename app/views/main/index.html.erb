@@ -1,0 +1,333 @@
+<div class="row top-pad">
+    <div class="col s12 center-align">
+        <span id="magic1"></span>
+        <span id="magic2"></span>
+        <span id="magic3"></span>
+    </div>
+</div>
+<div class="row fadein1">
+    <div class="col s12 center-align">
+        <%= link_to image_tag("linkedin.gif", class: "social-media", id: "li"), "https://www.linkedin.com/in/kellybhoward", target: "_blank" %>
+        <%= link_to image_tag("git.gif", class: "social-media", id: "git"), "https://github.com/kellybhoward", target: "_blank" %>
+        <%= link_to image_tag("twitter.gif", class: "social-media", id: "twitter"), "https://twitter.com/greenfairy71131", target: "_blank" %>
+    </div>
+</div>
+<div class="row fadein2">
+    <div class="container">
+        <div class="col s12 m4">
+            <a id="portfolio-link" href="/portfolio">
+                <div class="card-panel hoverable center-align">
+                    portfolio
+                </div>
+            </a>
+        </div>
+        <div class="col s12 m4">
+            <a id="experience-link" href="/experience">
+                <div class="card-panel hoverable center-align">
+                    experience
+                </div>
+            </a>
+        </div>
+        <div class="col s12 m4">
+            <a id="contact" class="modal-trigger" href="#contact_form">
+                <div class="card-panel hoverable center-align">
+                    <p>contact</p>
+                </div>
+            </a>
+            <!-- Contact Form -->
+            <div id="contact_form" class="modal">
+                <div class="modal-content">
+                    <div class="row">
+                        <form action="/submitForm" method="post" class="col s12">
+                            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <select name="message[reason]">
+                                        <option value="" disabled selected>What's on Your Mind?</option>
+                                        <option value="job opening">My company has a job opening.</option>
+                                        <option value="contract work">I have contract work available.</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="input-field col s3">
+                                    <input id="name" name="message[first_name]" type="text" class="validate" placeholder="first">
+                                </div>
+                                <div class="input-field col s3">
+                                    <input id="name" name="message[last_name]" type="text" class="validate" placeholder="last">
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="email" name="message[email]" type="email" class="validate" placeholder="email">
+                                </div>
+                                <div class="input-field col s6">
+                                    <input placeholder="company name" id="company_name" name="message[company_name]" type="text" class="validate">
+                                </div>
+                                <div class="input-field col s6">
+                                    <input placeholder="website" id="website" name="message[website]" type="text" class="validate">
+                                </div>
+                                <div class="input-field col s12">
+                                    <textarea id="textarea1" name="message[description]" class="materialize-textarea" placeholder="description"></textarea>
+                                </div>
+                                <button id="contactForm" class=" modal-action modal-close btn waves-effect waves-light right" type="submit" name="action">Submit
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- hidden content -->
+<div class="row">
+    <div class="container">
+        <div id="toTop">
+            <a href="#top"><i class="material-icons">keyboard_arrow_up</i></a>
+        </div>
+        <!-- portfolio -->
+        <div id="portfolio">
+            <!-- ReadIt! -->
+            <div class="card col s12 m8 offset-m2 project">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <%= image_tag("ri_slogan.gif", class: "activator")%>
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">ReadIt!<i class="material-icons right">more_vert</i></span>
+                    <p><a href="https://readitkelly.herokuapp.com" target="_blank">Live (Work in Progress)</a></p>
+                </div>
+                <div class="card-reveal">
+                    <div class="container">
+                        <span class="card-title grey-text text-darken-4">ReadIt!<i class="material-icons right">close</i></span>
+                        <p class="proj_desc">ReadIt! is a place for aspiring humans to access their full potential through the power of knowledge. By having clear goals and motivation through community, ReadIt members immerse themselves in the powerful works of old and new, carving a path to richer conversation and more robust lives.</p>
+                        <p class="proj_desc">This project is under construction.</p>
+                        <p class="proj_desc">See the full project source code on my <a href="https://github.com/kellybhoward/readIt" target="_blank" class="purple-text">github</a>.</p>
+                        <hr>
+                        <div class="chip">Javascript</div>
+                        <div class="chip">AngularJS</div>
+                        <div class="chip">NodeJS</div>
+                        <div class="chip">MaterializeCSS</div>
+                        <div class="chip">MongoDB</div>
+                        <div class="chip">Mongoose</div>
+                        <div class="chip">MongoDB</div>
+                        <div class="chip">socket.io</div>
+                        <div class="chip">Auth0</div>
+                        <div class="chip">Passport</div>
+                        <div class="chip">LinkedIn API</div>
+                    </div>
+                </div>
+            </div>
+            <!-- DJ app -->
+            <div class="card col s12 m8 offset-m2 project">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <%= image_tag("dj_app_promo.gif", class: "activator")%>
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Social DJ Playlist Uploader<i class="material-icons right">more_vert</i></span>
+                    <p>(catchy name tbd)</p>
+                </div>
+                <div class="card-reveal">
+                    <div class="container">
+                        <span class="card-title grey-text text-darken-4">Social DJ Playlist Uploader<i class="material-icons right">close</i></span>
+                        <p class="proj_desc">This application is meant for social dance DJs that want to refine and assess their song choices for dance playlists. Social partner dancers (like swing, blues, tango) rely on skilled DJs to shape their dance experience. Unlike club DJs that blend songs together, Social Dance DJs (SDDs) procure individual songs (~3-5 minutes each) and strategically choose what to play and when to play it throughout a dance night. Usually, SDDs save the resulting playlist for future reference on what worked well and what didn't work so well.</p>
+                        <p class="proj_desc">The goal of this application is to have a space for SDDs to upload playlists to their account and discover personal trends in their DJing style as well as get song recommendations based on their play style. The site would also show global trends in song selection for different dance styles. SDDs could also make requests and interact with other SDDs that have public accounts to hopefully grow the DJ community.</p>
+                        <p class="proj_desc">This project is in the preliminary stages. I'm working with one other developer on this application.</p>
+                        <hr>
+                        <p>potential technologies include:</p>
+                        <div class="chip">Ruby</div>
+                        <div class="chip">AngularJS</div>
+                        <div class="chip">Rails</div>
+                        <div class="chip">PostgreSQL</div>
+                        <div class="chip">Rails WebSockets</div>
+                        <div class="chip">Echonest API</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Nokogiri Web Crawler -->
+            <div class="card col s12 m8 offset-m2 project">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <%= image_tag("crawler.gif", class: "activator")%>
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Nokogiri Crawler<i class="material-icons right">more_vert</i></span>
+                    <p><a href="http://54.183.227.90/" target="_blank">Live Demo</a></p>
+                </div>
+                <div class="card-reveal">
+                    <div class="container">
+                        <span class="card-title grey-text text-darken-4">Nokogiri Crawler<i class="material-icons right">close</i></span>
+                        <p class="proj_desc">The Nokogiri Crawler is a Ruby on Rails app that uses <a href="www.highcharts.com" target="_blank">Highcharts API</a> and the Ruby Gem <a href="https://github.com/sparklemotion/nokogiri">Nokogiri</a> to display the top 10 words in the source code for the provided url.</p>
+                        <p class="proj_desc">This project focused on AJAX calls and Regex to crawl through JSON data and display results.</p>
+                        <p class="proj_desc">See the full project source code on my <a href="https://github.com/kellybhoward/nokogiricrawler" target="_blank" class="purple-text">github</a>.</p>
+                        <hr>
+                        <div class="chip">Ruby</div>
+                        <div class="chip">Rails</div>
+                        <div class="chip">AJAX</div>
+                        <div class="chip">Javascript</div>
+                        <div class="chip">Highcharts API</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Discussion Board -->
+            <div class="card col s12 m8 offset-m2 project">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <%= image_tag("db_login.gif", class: "activator")%>
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Discussion Board<i class="material-icons right">more_vert</i></span>
+                    <p><a class="modal-trigger" href="#db_photos">Project Slides</a></p>
+                    <div id="db_photos" class="modal">
+                        <div class="modal-content">
+                            <div class="slider">
+                                <ul class="slides">
+                                    <li>
+                                        <%= image_tag("db_dash.gif", class:"responsive-img") %>
+                                    </li>
+                                    <li>
+                                        <%= image_tag("db_filter.gif", class:"responsive-img") %>
+                                    </li>
+                                    <li>
+                                        <%= image_tag("db_add.gif", class:"responsive-img") %>
+                                    </li>
+                                    <li>
+                                        <%= image_tag("db_topic.gif", class:"responsive-img") %>
+                                    </li>
+                                    <li>
+                                        <%= image_tag("db_discussion.gif", class:"responsive-img") %>
+                                    </li>
+                                    <li>
+                                        <%= image_tag("db_user.gif", class:"responsive-img") %>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <div class="container">
+                        <span class="card-title grey-text text-darken-4">Discussion Board<i class="material-icons right">close</i></span>
+                        <p class="proj_desc">The Discussion Board is a simple forum application that hosts user topics. Users are able to create a user name, post new topics for discussion, comment on posted topics, comment on other users' comments, as well as like or dislike comments/posts.</p>
+                        <p class="proj_desc">This project was primarily a study in using the full MEAN stack (Mongo, Express, AngularJS, and NodeJS) to complete a basic Javascript web application.</p>
+                        <p class="proj_desc">See the full project source code on my <a href="https://github.com/kellybhoward/discussionBoard" target="_blank" class="purple-text">github</a>.</p>
+                        <hr>
+                        <div class="chip">Javascript</div>
+                        <div class="chip">AngularJS</div>
+                        <div class="chip">NodeJS</div>
+                        <div class="chip">MaterializeCSS</div>
+                        <div class="chip">MongoDB</div>
+                        <div class="chip">Mongoose</div>
+                        <div class="chip">MongoDB</div>
+                        <div class="chip">socket.io</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Book Reviewer Library -->
+            <div class="card col s12 m8 offset-m2 project">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <%= image_tag("brl_login.gif", class: "activator")%>
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Book Review Library<i class="material-icons right">more_vert</i></span>
+                    <p><a class="modal-trigger" href="#brl_photos">Project Slides</a></p>
+                    <div id="brl_photos" class="modal">
+                        <div class="modal-content">
+                            <div class="slider">
+                                <ul class="slides">
+                                    <li>
+                                        <%= image_tag("brl_login.gif", class:"responsive-img") %>
+                                    </li>
+                                    <li>
+                                        <%= image_tag("user_dash_select.gif", class:"responsive-img") %>
+                                    </li>
+                                    <li>
+                                        <%= image_tag("add_new_book.gif", class:"responsive-img") %>
+                                    </li>
+                                    <li>
+                                        <%= image_tag("book_profile.gif", class:"responsive-img") %>
+                                    </li>
+                                    <li>
+                                        <%= image_tag("user_profile.gif", class:"responsive-img") %>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <div class="container">
+                        <span class="card-title grey-text text-darken-4">Book Review Library<i class="material-icons right">close</i></span>
+                        <p class="proj_desc">The Book Reviewer Library is a simple app dedicated to sharing personal reviews of books. Users are able to set up their account, add book reviews to the review collection, submit new books for review, and view other users reviewer profiles.</p>
+                        <p class="proj_desc">This project was primarily a study in using the CodeIgnitor framework with a MySQL database to complete a basic PHP web application.</p>
+                        <p class="proj_desc">See the full project source code on my <a href="https://github.com/kellybhoward/bookReviewLibrary" target="_blank" class="purple-text">github</a>.</p>
+                        <hr>
+                        <div class="chip">PHP</div>
+                        <div class="chip">CodeIgniter</div>
+                        <div class="chip">MySQL</div>
+                        <div class="chip">Twitter Bootstrap</div>
+                        <div class="chip">JQuery</div>
+                        <div class="chip">Apache</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- experience -->
+        <div id="experience">
+            <div class="container">
+                <div id="toolbox">
+                    <h5>Technical Skills</h5>
+                    <table class="striped">
+                        <tbody>
+                            <tr>
+                                <td>Languages:</td>
+                                <td>Ruby, JavaScript, PHP</td>
+                            </tr>
+                            <tr>
+                                <td>Front-End:</td>
+                                <td>HTML5, CSS3, JQuery, Ajax, Photoshop, Illustrator</td>
+                            </tr>
+                            <tr>
+                                <td>Frameworks:</td>
+                                <td>AngularJS, Rails, Node.js, ExpressJS/Socket.io, CodeIgniter, Twitter Bootstrap, Apache</td>
+                            </tr>
+                            <tr>
+                                <td>Databases/ORM:</td>
+                                <td>MySQL, PostgreSQL, MongoDB, Mongoose.js, ActiveRecord</td>
+                            </tr>
+                            <tr>
+                                <td>Methodology/Testing:</td>
+                                <td>OOP, MVC, RESTful Architecture, Agile, Scrum, RSpec, Capybara</td>
+                            </tr>
+                            <tr>
+                                <td>Dev Tools:</td>
+                                <td>Chrome Dev Tools, Atom, Sublime Text, Git, Github, CLI, Balsamiq</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="education">
+                    <h5>Education and Training</h5>
+                    <p><a href="https://www.codingdojo.com" target="_blank">Coding Dojo</a> Graduate, San Jose, CA (Sept - Dec, 2015)</p>
+                    <blockquote>
+                        Intensive 14 week, full-time web development training program, including the introduction, implementation, and iteration of various web projects over 3 full web stacks (LAMP, MEAN, Ruby on Rails).
+                        <hr>
+                        <p><i class="material-icons tiny">grade</i> 1st place: Coding Dojo Hackathon.</p>
+                        <p><i class="material-icons tiny">grade</i> Perfect scores on all qualifying stack exams.</p>
+                    </blockquote>
+
+                    <p>University of Puget Sound, Tacoma, WA (2005-2009)</p>
+                    <blockquote >
+                        BS Natural Sciences Chemistry, Studio Art
+                        <hr>
+                        <p><i class="material-icons tiny">grade</i> GPA: 3.72 / 4.0</p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+        <!-- form success message -->
+        <h5 id="success" class="center-align"></h5>
+    </div>
+</div>

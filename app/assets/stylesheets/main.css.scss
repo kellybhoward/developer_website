@@ -1,0 +1,101 @@
+// Place all the styles related to the Main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$font-stack: Raleway, sans-serif;
+$primary-color: #111;
+$accent: #9682b3;
+$titleSize: 2em;
+*{
+    margin: 0px;
+    padding: 0px;
+}
+html {
+    font: 100% $font-stack !important;
+    color: $primary-color;
+    margin: 0px;
+    padding: 0px;
+}
+*::selection {
+    background: #998fa8; /* WebKit/Blink Browsers */
+}
+*::-moz-selection {
+    background: #998fa8; /* Gecko Browsers */
+}
+span {
+    display: block;
+}
+.top-pad{
+    padding-top: 20px;
+    min-height: 120px;
+}
+#magic1 {
+    font-size: 2em;
+}
+#magic2, #magic3{
+    font-size: 1.5em;
+}
+.card-panel:hover{
+    cursor: pointer;
+}
+.fadein1, .fadein2, #experience, #portfolio, #toTop{
+    display: none;
+}
+.social-media{
+    width: 20px;
+    height: 100%;
+}
+.social-media:hover{
+    cursor: pointer;
+}
+a{
+    color: darken($accent,20);
+}
+a:hover{
+    color: $accent;
+}
+.btn{
+    background-color: $accent;
+}
+.btn:hover{
+    background-color: darken($accent,20);
+}
+.dropdown-content li > a, .dropdown-content li > span{
+    color: $accent;
+}
+input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
+    border-bottom: 1px solid $accent;
+    box-shadow: 0 1px 0 0 $accent;
+}
+.project{
+    padding: 0px !important;
+}
+.chip{
+    margin: 2px;
+}
+#toTop{
+    // padding: 1px;
+    background-color: transparentize($primary-color, .8);
+    color: #accent !important;
+    position: fixed;
+    bottom: 0;
+    right: 5px;
+    margin-right: 10px;
+    z-index: 10;
+}
+.proj_desc{
+    margin-top: 20px;
+}
+.slider .slides li img {
+    background-size:100% auto;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+img{
+    height: 100%;
+}
+hr{
+    margin: 10px 0px;
+}
+blockquote{
+    border-left: 5px solid $accent;
+}
