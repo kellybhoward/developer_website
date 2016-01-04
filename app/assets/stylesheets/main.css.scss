@@ -15,6 +15,12 @@ html {
     margin: 0px;
     padding: 0px;
 }
+body {
+    background: url('background.gif') fixed;
+    background-size: cover;
+    padding: 0px;
+    margin: 0;
+}
 *::selection {
     background: #998fa8; /* WebKit/Blink Browsers */
 }
@@ -25,7 +31,7 @@ span {
     display: block;
 }
 .top-pad{
-    padding-top: 20px;
+    padding-top: 40px;
     min-height: 120px;
 }
 #magic1 {
@@ -41,7 +47,7 @@ span {
     display: none;
 }
 .social-media{
-    width: 20px;
+    width: 30px;
     height: 100%;
 }
 .social-media:hover{
@@ -74,24 +80,22 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
 }
 #toTop{
     // padding: 1px;
-    background-color: transparentize($primary-color, .8);
+    background-color: darken($accent, 70);
     color: #accent !important;
     position: fixed;
     bottom: 0;
     right: 5px;
-    margin-right: 10px;
+    margin-right: 20px;
+    margin-bottom: -5px;
+    padding: 0px 3px;
     z-index: 10;
+    border-radius: 5px;
 }
 .proj_desc{
     margin-top: 20px;
 }
 .slider .slides li img {
-    background-size:100% auto;
-    background-repeat: no-repeat;
     background-position: top;
-}
-img{
-    height: 100%;
 }
 hr{
     margin: 10px 0px;

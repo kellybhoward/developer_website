@@ -78,7 +78,7 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
+piroduction:
   <<: *default
   database: portfolio_production
   username: ubuntu
