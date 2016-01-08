@@ -8,6 +8,6 @@ class Messenger < ActionMailer::Base
   #
   def gmail_message(message)
     @message = message
-    mail(to: "kellybhoward@gmail.com", subject: "Portfolio: #{@message[:reason]}")
+    mail(to: "kellybhoward@gmail.com", subject: "Portfolio Request: #{@message[:reason]}")
   end
 end
